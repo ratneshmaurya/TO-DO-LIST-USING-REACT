@@ -1,13 +1,107 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  margin:0px;
+  padding:0px;
+  box-sizing: border-box;
+}
+.main-div{
+  width:100%;
+  height: 100vh;
+  display: flex;
+  background-color: cornflowerblue;
+  
+}
+.todo-div{
+  position: relative; /*so that head-and-input wala div sticky ho sake*/
+  width:50%;
+  height:70%;
+  margin:auto auto;
+  display: flex;
+  flex-direction: column;
+  background-color: cornsilk;
+  box-shadow:8px 8px 12px 0px rgb(0, 0, 0, 0.5);
+  border-radius: 20px;
+  overflow-y:auto; /*so that jab content overflow ho tbhi scroll option aaye else na aaye*/
+}
+.head-and-input{
+  position: sticky; /*sticky becoz when bhut input ho toh input wala option dikhta rhe always user ko*/
+  top:0px;
+  background-color:cornsilk;
+}
+.todo-heading{
+  top:18px;
+  background-color: rgb(185, 167, 6);
+  text-align: center;
+  color: aliceblue;
+}
+.todo-inputs{
+  text-align: center;
+  top:72px;
+}
+input{
+  margin-top: 10px;
+  padding:10px;
+  border: none;
+  outline:none;
+  width:60%;
+  border-bottom:2px solid rgb(185, 167, 6);
+}
+button{
+  margin-left: 5px;
+  padding:10px;
+  border:none;
+  outline:none;
+  border-radius: 10px;
+  background-color: rgb(185, 167, 6);
+}
+button:hover{
+  background-color: aliceblue;
+}
+/*------for lists jo notes bnnengi---------------*/
+ul li{
+  text-decoration: none;
+  color:rgb(133, 120, 5);
+  font-size:1.2rem;
+}
+.todo_list_item{
+  border: 1px solid black;
+  margin:7px 10px; /*so that neeche or side me chipka na rhe div card se hmara notes ka block*/
+  padding:2px;
+}
+.todo_list_item img{
+  margin-left: 10px;
+  height:15px;
+  width:17px;
+  display: inline-block;
+}
+.todo_list_item img:hover{
+  background-color:cornflowerblue;
+}
+.todo_list_item li{
+  margin-left: 10px;
+  display: inline-block;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*-----------adding styles to scrollbar--------------*/
+::-webkit-scrollbar-track /*whole scroll bar or for backgrounf*/
+{
+	border: 5px solid white;
+  border-radius: 10px;
+	background-color: #b2bec3;
+}
+::-webkit-scrollbar-track   /*here scroll bar ki hieght kmm krr rhe so that wo thoda neeche se start ho*/
+{
+  margin-top: 19px;
+  margin-bottom :19px;
+}
+
+::-webkit-scrollbar
+{
+	width: 5px;
+	background-color:none; /*ye transparent kr diya , now ab bss white border ki wjh se white dikhega scrol bar me*/
+}
+
+::-webkit-scrollbar-thumb /*for scroll bar pointer that moves*/
+{
+	background-color: rgb(185, 167, 6);
+	border-radius: 10px;
 }
